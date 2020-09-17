@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list prime</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num < 2) return false;
+        if (num === 2) return true;
+        for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    function listPrime() {
+        let number = +prompt('Enter the total volume of prime numbers you want to generate');
+        let count = 0;
+        let n = 0;
+        let str = ""
+        while (count < number) {
+            if (isPrime(n)) {
+                str += n +"-";
+                count++;
+            }
+            n++
+        }
+        document.write(str)
+    }
+    listPrime();
+</script>
+</body>
+</html>
