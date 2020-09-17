@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number guessing</title>
+</head>
+<body>
+<script>
+    let min = +prompt('Enter the minimum number');
+    let max = +prompt('Enter the maxnimum number');
+    let comNum = Math.floor(Math.random() * (max - min) + min);
+    let num = 0
+    let count = 0
+
+    do {
+        num = +prompt("Enter a number");
+        count++;
+        if (num > comNum) {
+            alert('The number entered is higher than the correct answer')
+        } else if (num < comNum) {
+            alert('The number entered is lower than the correct answer ')
+        } else {alert("You've got the right number after" + count + "attemp(s)");
+        break;}
+        if (count >= 3) {
+            alert('Game over, you ran out of attemp. The correct answer is ' + comNum);
+            break;
+        }
+    } while (num !== comNum)
+</script>
+</body>
+</html>
